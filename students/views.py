@@ -31,3 +31,11 @@ def home(request):
 {% command %}
 | ---> filter
 '''
+
+
+def student_list(request):
+    context={
+        
+    }
+    
+    return render(request,"students/student_list.html",context)
