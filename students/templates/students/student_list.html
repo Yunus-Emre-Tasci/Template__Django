@@ -6,10 +6,17 @@
 
 
 {% block body %}
-<h2>Student List</h2>
+<h2>Student list</h2>
 <br>
-
+<ul>
     
+    {% for student in students %}
+        <li>
+            {{ student.number }} - {{ student }}
+        </li>
+    {% endfor %}
+</ul>
+
 {% endblock body %}
     
     

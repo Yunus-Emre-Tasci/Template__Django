@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Student
+from .forms import StudentForm
 
 def home(request):
 
@@ -37,7 +38,15 @@ def home(request):
 def student_list(request):
     students=Student.objects.all()
     context={
-        "students":"student"
+        "students":students
     }
     
     return render(request,"students/student_list.html",context)
+
+def student_add(request):
+    form=StudentForm()
+    context={
+        "form":form
+    }
+    
+    return render(request,"students/student_add.html",context)
