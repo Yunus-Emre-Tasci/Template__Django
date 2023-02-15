@@ -76,3 +76,12 @@ def student_update(request,id):
     }
     
     return render(request,"students/student_update.html",context)
+
+def student_detail(request,id):
+    student=get_object_or_404(Student,id=id)
+    
+    context={
+       "student":student 
+    }
+    
+    return render(request,"students/student_detail.html",context)
